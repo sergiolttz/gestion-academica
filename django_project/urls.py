@@ -16,8 +16,19 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include  
+from django.conf import settings
+from django.conf.urls.static import static
+
+from app.views import *
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path('', include('app.urls')),
+    #path("formulario/", pagina_formulario),
+    #path("busqueda_estudiante/", busqueda_estudiante),
+    #path("busqueda_profesor/", busqueda_profesor),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

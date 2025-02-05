@@ -1,0 +1,83 @@
+/* styles.css */
+
+body {
+    font-family: sans-serif;
+    /* Fuente de letra para el cuerpo del documento */
+    background-color: #cb3131;
+    /* Color de fondo general */
+    display: flex;
+    justify-content: center;
+    /* Centrar horizontalmente */
+    align-items: center;
+    /* Centrar verticalmente */
+    min-height: 100vh;
+    /* Asegurar que el cuerpo ocupa toda la altura de la pantalla */
+    margin: 0;
+    /* Eliminar márgenes predeterminados del cuerpo */
+}
+
+#cuadro {
+    background-color: #fff;
+    /* Color de fondo del cuadro */
+    border-radius: 8px;
+    /* Bordes redondeados */
+    padding: 20px;
+    /* Espacio interno del cuadro */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Sombra ligera */
+    text-align: center;
+    /* Centrar el texto dentro del cuadro */
+}
+
+p {
+    margin-bottom: 10px;
+    /* Espacio inferior para los párrafos */
+}
+
+form {
+    margin-bottom: 20px;
+    /* Espacio inferior para los formularios */
+}
+
+input[type="text"] {
+    padding: 8px;
+    /* Espacio interno del campo de texto */
+    border: 1px solid #ccc;
+    /* Borde del campo de texto */
+    border-radius: 4px;
+    /* Bordes redondeados del campo de texto */
+    margin-right: 10px;
+    /* Espacio a la derecha del campo de texto */
+    width: 200px;
+    /* Ancho del campo de texto */
+    box-sizing: border-box;
+    /* Incluir el padding y el borde en el ancho del elemento */
+}
+
+.button {
+    background-color: #4CAF50;
+    /* Color de fondo del botón */
+    color: white;
+    /* Color de texto del botón */
+    padding: 8px 16px;
+    /* Espacio interno del botón */
+    border: none;
+    /* Eliminar borde del botón */
+    border-radius: 4px;
+    /* Bordes redondeados del botón */
+    cursor: pointer;
+    /* Cursor al pasar por encima del botón */
+}
+
+.button:hover {
+    background-color: #45a049;
+    /* Color de fondo del botón al pasar el cursor */
+}
+
+/* Estilos opcionales para el centrado con <center>, si se desea mantener */
+center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}

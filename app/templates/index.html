@@ -1,0 +1,22 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sistema de gestión académica</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-content">
+                <h1>Bienvenido al sistema de gestión académica</h1>
+                <a href="{% url 'pagina_formulario' %}" class="btn">Buscar</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
