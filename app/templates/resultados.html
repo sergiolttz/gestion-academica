@@ -1,5 +1,5 @@
 {% load static %}
-
+<!--
 <!DOCTYPE html>
 <html>
 
@@ -28,6 +28,64 @@
                             <p>Carrera: {{ persona.carrera }}</p>
                             <p>Género: {{ persona.sexo }}</p>
                             <p>Semestres cursados: {{ persona.semestres_cursados }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <p class="no-resultados">No se encontraron resultados en la base de datos.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+-->
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Resultados de la consulta</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-content">
+                <h2>Resultados de la búsqueda</h2>
+                <p>Término de búsqueda: '{{ busqueda }}'</p>
+                {% if personas %}
+                <p>Elementos encontrados: {{ personas|length }}</p>
+                <div class="results-list">
+                    {% for persona in personas %}
+                    <div class="result-item">
+                        <div class="result-header">
+                            <span class="person-name">{{ persona.nombre_y_apellido }}</span>
+                            
+                            {% if tipo == 'estudiante' %}
+                                <span class="person-tag estudiante" >estudiante</span>
+                            {% elif tipo == 'profesor' %}
+                                <span class="person-tag profesor">profesor</span>
+                            {% endif %}
+                            
+                        </div>
+                        <div class="result-details">
+                            {% if tipo == 'estudiante' %}
+                            <p>Promedio: {{ persona.promedio }}</p>
+                            <p>Carrera: {{ persona.carrera }}</p>
+                            <p>Género: {{ persona.sexo }}</p>
+                            <p>Semestres cursados: {{ persona.semestres_cursados }}</p>
+                            {% elif tipo == 'profesor' %}
+                            <p>Asignatura: {{ persona.asignatura }}</p>
+                            <p>Experiencia: {{ persona.tiempo_exp }}</p>
+                            <p>Trayectoria: {{ persona.trayectoria_resumen }}</p>
+                            <p>Sexo: {{ persona.sexo }}</p>
+                            {% endif %}
                         </div>
                     </div>
                     {% endfor %}
